@@ -99,7 +99,7 @@ Web-Project/
 └── requirement.txt
 └── main.py
 
-*** Security Features Explained
+*** Security Features Explained.
 
 *** Session Management
 - Sessions expire after 20 minutes of inactivity

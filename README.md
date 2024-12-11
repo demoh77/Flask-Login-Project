@@ -86,18 +86,18 @@ app.config['ACCOUNT_LOCKOUT_DURATION'] = 5  # Lockout duration in minutes
 ```
 Web-Project/
 +-- ca2/
-¦   +-- __init__.py
-¦   +-- auth.py
-¦   +-- models.py
-¦   +-- views.py
-¦   +-- templates/
-¦       +-- base.html
-¦       +-- home.html
-¦       +-- login.html
-¦       +-- sign_up.html
-+-- run.py
-+-- requirement.txt
-+-- README.md
+¦   +-- __init__.py       # Application factory, initializes the app and extensions
+¦   +-- auth.py           # Handles authentication (login, signup, logout)
+¦   +-- models.py         # Database models for Users and Notes
+¦   +-- views.py          # Application logic for notes management
+¦   +-- templates/        # HTML templates for rendering the frontend
+¦       +-- base.html     # Base layout for consistent design
+¦       +-- home.html     # User home page for managing notes
+¦       +-- login.html    # Login page
+¦       +-- sign_up.html  # Signup page
++-- main.py               # Entry point to start the application
++-- requirement.txt       # List of dependencies for the project
++-- README.md             # Project overview and Information guide
 
 *** Security Features Explained.
 

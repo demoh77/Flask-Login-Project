@@ -29,7 +29,7 @@ def create_app():
     app.config['SESSION_COOKIE_SAMESITE'] = 'Strict'
     app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20) # Permanent Session set to 20mins
     app.config['FAILED_LOGIN_ATTEMPTS'] = 3  # Maximum failed login attempts
-    app.config['ACCOUNT_LOCKOUT_DURATION'] = 10  # Lockout duration in minutes
+    app.config['ACCOUNT_LOCKOUT_DURATION'] = 5  # Lockout duration in minutes
     
     
     db.init_app(app)

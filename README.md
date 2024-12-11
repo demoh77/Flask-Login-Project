@@ -1,6 +1,6 @@
 # Flask Notes App
 
-A secure web application built with Flask that allows users to create, store and delete notes. The application implements various security features including session management, account lockout, and protection against common web vulnerabilities.
+A secure web application built with Flask that allows users to create, store and delete notes. The application implements various security features including session management, account lockout, and protection against common web vulnerabilities. The project will build upon an existing GitHub open source-code created by GitHub User “techwithtim” https://github.com/techwithtim/Flask-Web-App-Tutorial. I want to say thank you for education and content you put out on a daily.
 
 *** Features
 

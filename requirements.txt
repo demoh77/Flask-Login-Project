@@ -8,3 +8,4 @@ markupsafe
 datetime
 Jinja2
 Werkzeug
+python3

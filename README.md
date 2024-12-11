@@ -85,19 +85,19 @@ app.config['ACCOUNT_LOCKOUT_DURATION'] = 5  # Lockout duration in minutes
 *** Project Structure
 ```
 Web-Project/
-├── ca2/
-│   ├── __init__.py
-│   ├── auth.py
-│   ├── models.py
-│   ├── views.py
-│   └── templates/
-│       ├── base.html
-│       ├── home.html
-│       ├── login.html
-│       └── sign_up.html
-|
-└── requirement.txt
-└── main.py
++-- ca2/
+¦   +-- __init__.py
+¦   +-- auth.py
+¦   +-- models.py
+¦   +-- views.py
+¦   +-- templates/
+¦       +-- base.html
+¦       +-- home.html
+¦       +-- login.html
+¦       +-- sign_up.html
++-- run.py
++-- requirement.txt
++-- README.md
 
 *** Security Features Explained.
 

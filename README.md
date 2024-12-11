@@ -122,3 +122,4 @@ Web-Project/
 - Flask documentation and community
 - SQLAlchemy documentation
 - Flask-Login documentation
+- T. Ruscica, “GitHub - techwithtim/Flask-Web-App-Tutorial: Code for the note storing flask web app made during a YouTube video.,” GitHub, Jun. 15, 2021. https://github.com/techwithtim/Flask-Web-App-Tutorial 

@@ -24,13 +24,13 @@ def home():
     if request.method == 'POST': 
         note = check_input(request.form.get('note', '')) # Gets the note from the HTML 
 
-        if len(note) < 1:
-            flash('Note is too short!', category='error') 
+        if len(note) < 0:
+            flash('Please add a Note!', category='error') 
         else:
             new_note = Note(data=note, user_id=current_user.id)  #providing the schema for the note 
             db.session.add(new_note) #adding the note to the database 
             db.session.commit()
-            flash('Your Note is added!', category='success')
+            flash('Your note is added!', category='success')
 
     return render_template("home.html", user=current_user)
 
@@ -48,6 +48,6 @@ def delete_note():
         if note.user_id == current_user.id:
             db.session.delete(note)
             db.session.commit()
-            flash('Your Note is deleted!', category='success')
+            flash('Your note is deleted!', category='success')
 
     return jsonify({})

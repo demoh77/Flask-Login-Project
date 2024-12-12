@@ -16,6 +16,27 @@ limiter = Limiter(key_func=get_remote_address)
 def check_input(text):
     return escape(text.strip())
 
+@views.route('/update-note', methods=['POST'])
+@login_required
+@limiter.limit("5/minute")
+def update_note():
+    try:
+        note_data = json.loads(request.data)
+        note_id = note_data.get('noteId')
+        new_content = check_input(note_data.get('content', ''))
+        
+        note = Note.query.get(note_id)
+        if note and note.user_id == current_user.id:
+            if len(new_content) < 0:
+                return jsonify({"error": "Please add a note!"}), 400
+            note.data = new_content
+            db.session.commit()
+            flash('Your note updated successfully!', category='success')
+            return jsonify({"success": True})
+        return jsonify({"error": "Note not found or unauthorized"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @views.route('/', methods=['GET', 'POST'])
 @views.route('/home', methods=['GET', 'POST'])
 @login_required

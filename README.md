@@ -2,9 +2,9 @@
 
 A secure web application built with Flask that allows users to create, store and delete notes. The application implements various security features including session management, account lockout, and protection against common web vulnerabilities (e.g., SQL injection prevention, secure session handling, input validation). The project will build upon an existing GitHub open source-code created by GitHub User “techwithtim” https://github.com/techwithtim/Flask-Web-App-Tutorial. I want to say thank you for education and content you put out on a daily.
 
-*** Features
+Improved Features listed below:
 
-*** Security
+Security
 - CSRF protection for all forms
 - Session management with 20-minute timeout
 - Account lockout after 3 failed login attempts
@@ -14,7 +14,7 @@ A secure web application built with Flask that allows users to create, store and
 - Secure cookie configuration
 - SQL injection prevention through SQLAlchemy
 
-*** User Management
+User Management
 - User registration with email validation
 - Secure login system
 - Password requirements:
@@ -24,14 +24,13 @@ A secure web application built with Flask that allows users to create, store and
 - Account lockout system
 - Session timeout protection
 
-*** Notes
-- Create and delete personal notes
+Notes
+- Create, Read, Update and Delete personal notes (CRUD)
 - Notes are associated with user accounts
 - Real-time updates
 - Confirmation before deletion
 
-*** Prerequisites
-
+Prerequisites
 - Python 3.x
 - Flask
 - SQLAlchemy
@@ -44,7 +43,7 @@ A secure web application built with Flask that allows users to create, store and
 - Datetime
 - Jinja2
 
-*** Installation
+Installation:
 
 1. Clone the repository:
 
@@ -66,7 +65,7 @@ python.exe .\main.py
 
 The application will be available at `http://127.0.0.1:5000`
 
-*** Configuration
+Configuration:
 
 The application uses several configuration settings that can be modified in `__init__.py`:
 
@@ -82,8 +81,7 @@ app.config['FAILED_LOGIN_ATTEMPTS'] = 3  # Maximum failed login attempts
 app.config['ACCOUNT_LOCKOUT_DURATION'] = 5  # Lockout duration in minutes
 ```
 
-*** Project Structure
-```
+Project Structure:
 Web-Project/
 +-- ca2/
 ¦   +-- __init__.py       # Application factory, initializes the app and extensions
@@ -99,26 +97,27 @@ Web-Project/
 +-- requirement.txt       # List of dependencies for the project
 +-- README.md             # Project overview and Information guide
 
-*** Security Features Explained.
-
-*** Session Management
+Security Features Explained:
+Session Management
 - Sessions expire after 20 minutes of inactivity
 - Secure cookie configuration with HTTPOnly and SameSite flags
 - Session regeneration on login
 
-*** Account Protection
+Account Protection
 - Account lockout for 5 minutes after 3 failed login attempts
 - Rate limiting on login and note creation endpoints
 - Password complexity requirements enforced
 
-*** Input Validation
+Input Validation
 - Email validation using regex
 - Input sanitization for all user inputs
 - XSS protection through template escaping
 - CSRF tokens for all forms
 
-*** Acknowledgments
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
+Acknowledgments
 - Flask documentation and community
 - SQLAlchemy documentation
 - Flask-Login documentation

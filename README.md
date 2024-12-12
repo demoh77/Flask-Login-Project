@@ -48,6 +48,7 @@ Installation:
 1. Clone the repository:
 
 git clone https://github.com/Demoh77/Web-Project.git
+
 cd '.\Web-Project\'
 
 2. Create a virtual environment and activate it:

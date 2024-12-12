@@ -90,6 +90,43 @@
     window.location.href = "/";
   });
   }
+  function updateNote(noteId) {
+    const noteElement = document.getElementById(`note-${noteId}`);
+    const noteContent = noteElement.querySelector('.note-content');
+    const updateForm = noteElement.querySelector('.update-form');
+    
+    if (updateForm.style.display === 'none' || !updateForm.style.display) {
+        noteContent.style.display = 'none';
+        updateForm.style.display = 'block';
+    } else {
+        noteContent.style.display = 'block';
+        updateForm.style.display = 'none';
+    }
+}
+
+function saveNoteUpdate(noteId) {
+    const updateInput = document.getElementById(`update-input-${noteId}`);
+    const newContent = updateInput.value;
+    
+    fetch("/update-note", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': '{{ csrf_token() }}'
+        },
+        body: JSON.stringify({
+            noteId: noteId,
+            content: newContent
+        }),
+    }).then((response) => response.json())
+    .then((data) => {
+        if (data.error) {
+            alert(data.error);
+        } else {
+            window.location.href = "/";
+        }
+    });
+}
 </script>
 {% endblock %}
   </body>

@@ -3,11 +3,24 @@
 <h1 class="mb-4">Welcome, {{ user.first_name | escape }} {{ user.surname | escape }}!</h1>
 <ul class="list-group list-group-flush" id="notes">
   {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <li class="list-group-item" id="note-{{ note.id }}">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="note-content">
+        {{ note.data }}
+      </div>
+      <div class="update-form" style="display: none;">
+        <input type="text" id="update-input-{{ note.id }}" class="form-control" value="{{ note.data }}">
+        <button class="btn btn-sm btn-success mt-2" onclick="saveNoteUpdate({{ note.id }})">Save</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-info mr-2" onClick="updateNote({{ note.id }})">
+          Edit
+        </button>
+        <button type="button" class="btn btn-sm btn-danger" onClick="deleteNote({{ note.id }})">
+          Delete
+        </button>
+      </div>
+    </div>
   </li>
   {% endfor %}
 </ul>

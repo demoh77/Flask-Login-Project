@@ -47,7 +47,7 @@ Installation:
 
 1. Clone the repository:
 
-git clone https://github.com/Demoh77/Web-Project.git
+git clone https://github.com/demoh77/Web-Project.git
 
 cd '.\Web-Project\'
 

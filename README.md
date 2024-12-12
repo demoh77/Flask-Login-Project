@@ -82,6 +82,7 @@ app.config['ACCOUNT_LOCKOUT_DURATION'] = 5  # Lockout duration in minutes
 ```
 
 Project Structure:
+```
 Web-Project/
 +-- ca2/
 ¦   +-- __init__.py       # Application factory, initializes the app and extensions
@@ -96,7 +97,7 @@ Web-Project/
 +-- main.py               # Entry point to start the application
 +-- requirement.txt       # List of dependencies for the project
 +-- README.md             # Project overview and Information guide
-
+```
 Security Features Explained:
 Session Management
 - Sessions expire after 20 minutes of inactivity
